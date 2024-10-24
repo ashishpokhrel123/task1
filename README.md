@@ -4,7 +4,7 @@ A Single Page Application (SPA) is a web application that loads a single HTML pa
 
 ## **Monorepo Management with Yarn**
 
-In this project, we utilize **Yarn** as our package manager to facilitate a **monorepo** structure. A monorepo allows us to manage multiple related projects within a single repository, simplifying dependency management and improving collaboration among development teams.
+In this project, I utilize **Yarn** as our workspace to facilitate a monorepo structure. A monorepo allows to manage multiple related projects within a single repository. This approach simplifies dependency management and enhances collaboration among development teams by providing a unified environment for development.
 
 ## **Features**
 
