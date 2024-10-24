@@ -19,7 +19,7 @@ Advanced Single Page Application requires NodeJs(https://nodejs.org/) v18+ to ru
 Install the dependencies and devDependencies and start the server.
 
 ```sh
-cd pratik-creation
+cd pratik-mern
 npm install/yarn
 npm start / yarn start
 
