@@ -1,10 +1,38 @@
-import express from "express";
-import { Response, Request } from "express";
-const port = 3200;
+import express, { NextFunction, Request, Response } from "express";
+import cors from "cors";
+
+import { connectToDatabase } from "./database/database";
+import { errorHandler } from "./middleware/errorhandle";
+import routes from "./routes";
+import { NotFoundError } from "./utils/erros/CommonError";
+
+const PORT = 3200;
 const app = express();
+
+// Middleware
+app.use(cors());
+app.options("*", cors());
+
+// Connect to the database
+connectToDatabase();
+
+// API Routes
+app.use("/api", routes);
+
+// Test Route
 app.get("/test", (req: Request, res: Response) => {
-  res.json({ status: 200, message: "welcome from monorepo server" });
+  res.json({ status: 200, message: "Welcome from monorepo server" });
 });
-app.listen(port, () => {
-  console.log(`Server  running  on ${port}`);
+
+// Handle 404 Errors
+app.use((req: Request, res: Response, next: NextFunction) => {
+  next(new NotFoundError("Not Found"));
+});
+
+// // Global Error Handling
+// app.use(errorHandler);
+
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

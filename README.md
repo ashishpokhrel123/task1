@@ -20,6 +20,7 @@ In this project, I utilize **Yarn** as our workspace to facilitate a monorepo st
 - **_Docker_** - **For Containerization**
 - **_Typescript_**
 - **_Mongo Db_** - **No Sql Database**
+- **_concurrently_** - **Run multiple scripts simultaneously within monorepo**
 
 ## **Installation**
 
